@@ -68,6 +68,12 @@ class JobViewSet(viewsets.ModelViewSet):
         data = request.data.copy()
         data['created_by'] = user.pk
         
+        company_id = data.get('company')
+        if not company_id:
+            return Response(
+            {"detail": "Company field is required."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
         serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
