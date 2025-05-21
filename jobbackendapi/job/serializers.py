@@ -26,6 +26,8 @@ class CompanySerializer(serializers.ModelSerializer):
         
     
 class JobSerializer(serializers.ModelSerializer):
+    company = CompanySerializer(read_only=True)
     class Meta:
         model = Job
         fields = '__all__'
+        read_only_fields = ['created_by', 'created_at', 'updated_at']

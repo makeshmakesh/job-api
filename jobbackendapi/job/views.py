@@ -61,7 +61,7 @@ class JobViewSet(viewsets.ModelViewSet):
         
         if not (user.user_type == "job_poster"):
             return Response(
-                {"detail": "You do not have permission to create a company."},
+                {"detail": "You do not have permission to create a job."},
                 status=status.HTTP_403_FORBIDDEN
             )
         
