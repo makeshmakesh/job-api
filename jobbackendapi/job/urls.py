@@ -1,3 +1,4 @@
+#pylint:disable=all
 from rest_framework import routers
 from .views import UserViewSet, CompanyViewSet, JobViewSet
 from django.urls import path

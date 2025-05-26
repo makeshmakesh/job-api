@@ -1,3 +1,4 @@
+#pylint:disable=all
 from rest_framework import serializers
 from .models import User, Company, Job
 

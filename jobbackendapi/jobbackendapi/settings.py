@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'job.middleware.LogMiddleware'
 ]
 
 ROOT_URLCONF = 'jobbackendapi.urls'
@@ -137,3 +138,7 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'job.User'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
